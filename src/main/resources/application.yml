@@ -10,7 +10,10 @@ spring:
           uri: https://github.com/KavinduLakshanFernando/LapShop-project-configurations.git
           search-paths: platform,services
         native:
-          search-locations: ${CONFIG_REPO_PATH:file:./config-repo,file:../config-repo,file:../../config-repo}
+          search-locations:
+            - classpath:/configurations
+            - file:./configurations/platform
+            - file:./configurations/services
 
 server:
   port: 8888
